@@ -1,0 +1,12 @@
+<div class="index">
+    <h2>Login</h2>
+    <div class="form">        
+        <?php echo $this->form ?>
+        <?php if (!is_null($this->error) && $this->error == 1): ?>
+            <div class="error">
+                Username or email is invalid.
+            </div>
+        <?php endif; ?>
+    </div>    
+    <a href="<?php echo $this->baseUrl('login/signup') ?>" title="Sign up">New user? Sign up.</a>
+</div>

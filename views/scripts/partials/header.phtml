@@ -1,0 +1,7 @@
+<div id="header">
+    <h2>Hello <?php echo $this->player->getNome() ?>, welcome.</h2>    
+    <a href="<?php echo $this->baseUrl('login/doauth') ?>">Exit</a>
+    <?php if ($this->getAction() != 'home'): ?>
+        <a href="<?php echo $this->baseUrl('game/home/t/' . $this->tokken) ?>" class="home">Home</a>
+    <?php endif ?>
+</div>

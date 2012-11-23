@@ -1,0 +1,391 @@
+/** CSS START **/
+/** Css Pattern Browser Compatibility **/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section
+{
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,ul {
+    list-style: none;
+}
+
+blockquote,q {
+    quotes: none;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+object {
+    outline: none;
+}
+
+.noflash {
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+body,html {
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clearboth {
+    clear: both;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+#header {
+    overflow: hidden;
+    border-bottom: 1px solid #ababab;
+}
+#header h2 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    float: left;
+    width: 400px;
+}
+#header a {
+    padding: 10px 10px 0px 0px;
+    float: right;
+    font-family: 'MuseoSans500';
+    color: red;
+}
+#header a.home {
+    color: #595959;
+}
+
+#content {
+    width:550px;
+    margin:0 auto;
+    overflow:hidden;
+    padding-top: 20px;
+}
+.p1, .p2 {
+    margin-top:20px;
+    width:45%;
+}
+.p2 {
+    float:right;
+}
+.p1 img, .p2 img {
+    float:left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.p1 h1, .p2 h1 {
+    margin-top:30px;
+}
+
+.vs {
+    margin-top:50px;
+    font-size:18px;
+    margin-left:10px;
+    color:red;
+}
+
+h1, h2 {
+    font-family: 'MuseoSans500';
+    font-size:30px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size:16px;
+    color:gray;
+}
+div.players {
+    height: 110px;
+}
+.rkg {
+    padding-top: 60px;
+    clear: both;
+    margin-top:20px;
+}
+.rkg h2 {
+    font-size: 20px
+}
+.tab ul {
+    background:#e2e2e2;
+    display:block;
+    overflow:hidden;
+    margin-top:30px;
+}
+
+.tab ul li {
+    width:33%;
+    border-left:1px solid white;
+    border-bottom:1px solid white;
+    height:150px;    
+    float:left;
+}
+.tab ul li a.locked:hover {
+    background:#e2e2e2;
+}
+.tab ul li a:hover {
+    background-color: #d2d2d2;
+}
+a.new {
+    display:block;
+    margin-top:40px;
+    font-family: 'MuseoSans500';
+    text-align:center;
+    color:green;
+
+}
+.tab ul li a.locked {
+    cursor:wait;
+}
+.tab ul li a.circle {
+    background:url('../images/circle.png') no-repeat center center;
+    cursor:default;
+}
+
+.tab ul li a.ex {
+    background:url('../images/ex.png') no-repeat center center;
+    cursor:default;
+}
+.tab ul li a {
+    display:block;
+    width:100%;
+    height:150px;
+}
+
+.ranking {
+    border-bottom:1px solid silver;
+    padding-bottom:10px;
+    overflow:auto;
+    max-height:200px;
+}
+
+.ranking li {
+    font-family: 'MuseoSans500';
+    font-size:12px;
+    color:silver;
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px solid silver;
+    display:block;
+}
+
+.ranking li .pts {
+    color:gray;
+    float:right;
+    font-family: 'MuseoSans900';
+    margin-right:10px;
+}
+
+.msg {
+    text-align: center;
+    height:40px;
+    margin-top:20px;
+    line-height: 40px;
+    background:#fffee5;
+    border:1px solid #767200;
+    font-family: 'MuseoSans500';
+    font-size:16px;
+}
+
+/* LOGIN */
+
+.index {
+
+}
+.index h2 {
+    font-size:20px;
+    color:gray;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+.index a {
+    font: 16px 'MuseoSans300';    
+    text-decoration: underline;
+    color: #4e4e4e;
+}
+.index a:hover {
+    color: #000;
+}
+.index .form {    
+    background: #ececec;
+    padding: 10px;
+    overflow: hidden;    
+    padding: 40px 75px 40px 75px;
+    margin-bottom: 20px;
+}
+.index .form label {
+    float: left;
+    width: 80px;
+    text-align: right;
+    font: 14px 'MuseoSans300';
+    padding-right: 10px;
+    line-height: 30px;
+}
+.index .form input {
+    float: left;
+    width: 250px;
+    border: 0px;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+}
+.index .form .submit {
+    float: right;
+    margin-right: 43px;
+    cursor: pointer;
+    width: 100px;
+}
+.error {
+    font: 15px 'MuseoSans300';
+    clear: both;
+    color: red;
+    padding-top: 20px;
+    text-align: center;
+}
+.index .form .row {
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+.content {
+    width:550px;
+    margin:0 auto;
+    overflow:hidden;
+}
+.content .newg {
+    padding-top: 20px;
+    padding: 20px;
+    text-align: center;
+    background: #ececec;
+    margin: 2px 0px 2px 0px;
+}
+.content .submit {
+    padding: 10px;
+    font: 15px 'MuseoSans500';
+    text-transform: uppercase;
+    border: 0px;
+    cursor: pointer;
+}
+.content .subn {
+    background-color: #3aa92e;
+    color: #FFF;
+    width: 200px;
+}
+.content .subn:hover {
+    background-color: green;
+}
+.content .loadg {
+    padding-top: 20px;
+    padding: 20px;
+    text-align: center;
+    background: #ececec;
+    margin-bottom: 2px;
+}
+.content .loadg input {
+    border: 0px;
+    padding: 10px;
+    border: 1px solid #d7d7d7;
+}
+.content .subl {
+    background-color: #f68213;
+    color: #FFF;
+    width: 120px;
+    border: 0px !important;
+}
+.content .newg p,
+.content .loadg p {
+    font: 14px 'MuseoSans300';
+    padding-bottom: 10px;
+}
+.waiting {
+    clear: both;
+    font-family: 'MuseoSans500';
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 60px;
+}
+.finalw {
+    font-size: 30px;
+    padding: 20px;
+    color: green;
+}
+.finall {
+    font-size: 30px;
+    padding: 20px;
+    color: red;
+}
+.spec {
+    color: #f68213;
+}
+.gname {
+    background: #FFF;
+    padding: 10px;
+}
+.gname span {
+    color: green;
+}
+.players h1 {
+    font-size: 18px;
+}
+
+#footer {    
+    width: 530px;
+    margin: 0px auto;
+    margin-top: 40px;
+    font: 13px 'MuseoSans300';
+    color: #363636;
+    line-height: 18px;
+    background: #ececec;
+    border-top: 1px solid #aeaeae;
+    padding: 10px;    
+}

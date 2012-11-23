@@ -1,0 +1,110 @@
+<?php echo $this->header ?>
+<div class="msg gname">
+    Game ID: <span><?php echo $this->gname ?></span>
+</div>
+<div class="content players">
+    <div class = "left p1">
+        <?php if ($this->game->getPlayer1()):
+            ?> 
+            <img src="http://www.gravatar.com/avatar/<?php echo $this->game->getPlayer1()->getGravatar() ?>" />                               
+            <h1><?php echo $this->game->getPlayer1()->getNome() ?></h1>
+        <?php endif ?>
+    </div>
+    <div class="left vs">VS</div>
+    <div class="left p2">
+        <?php if ($this->game->getPlayer2()): ?>
+            <img src="http://www.gravatar.com/avatar/<?php echo $this->game->getPlayer2()->getGravatar() ?>" />               
+            <h1><?php echo $this->game->getPlayer2()->getNome() ?></h1>
+        <?php else: ?>
+            <h1>Player 2</h1>
+        <?php endif ?>
+    </div>
+</div>
+
+<?php if ($this->game->getStatusInit()): ?>
+    <?php if ($this->spectator): ?>
+        <div class="msg spec">
+            You are spectator
+        </div>
+    <?php endif ?>
+    <?php if ($this->win == null): ?>
+        <?php if ($this->last != $this->tplayer && !$this->spectator): ?>
+            <div class="msg">
+                Your turn to play
+            </div>
+        <?php else: ?>
+            <div class="msg">
+                <?php
+                echo 'Waiting ';
+                if ($this->last == 1)
+                    echo strtoupper($this->game->getPlayer2()->getNome());
+                else
+                    echo strtoupper($this->game->getPlayer1()->getNome());
+                echo ' play!';
+                ?>
+            </div>
+        <?php endif ?>
+        <div class="content">
+            <div class="tab">
+                <ul>
+                    <?php
+                    for ($i = 0; $i < 3; $i++):
+                        ?>
+                        <?php
+                        for ($j = 0; $j < 3; $j++):
+                            ?>
+                            <?php
+                            $r = $this->board->getPosition($i, $j);
+                            if ($r == null):
+                                ?>
+                                <li>
+                                    <?php if ($this->last != $this->tplayer && !$this->spectator): ?>
+                                        <a class="" href="<?php echo $this->baseUrl('game/init/t/' . $this->tokken . '?gname=' . $this->gname . '&l=' . $i . '&c=' . $j . '&tplayer=' . $this->tplayer) ?>"></a>
+                                    <?php else : ?>
+                                        <a class="locked"></a>
+                                    <?php endif ?>
+                                </li>
+                            <?php else:
+                                ?>
+                                <li><a class="<?php echo ($r == 1) ? 'ex' : 'circle' ?>" href=""></a></li>
+                            <?php
+                            endif;
+                            ?>
+
+                        <?php endfor ?>
+                    <?php endfor ?>                    
+                </ul>
+            </div>
+        </div>
+    <?php else : ?>
+
+        <?php if (!$this->spectator): ?>
+            <?php if ($this->win == $this->player_email): ?>
+                <div class="msg finalw">You WIN!</div>
+            <?php else: ?>
+                <div class="msg finall">You LOSE!</div>
+            <?php endif ?>
+            <div class="content"> 
+                <a class="new" href="<?php echo $this->baseUrl('game/init/t/' . $this->tokken . '?gname=' . $this->gname . '&new=1') ?>">New Game?</a>
+            </div>
+        <?php else: ?>
+            <?php
+            if ($this->win == $this->game->getPlayer1()->getEmail())
+                $nome = $this->game->getPlayer1()->getNome();
+            else
+                $nome = $this->game->getPlayer2()->getNome();
+            ?>
+            <div class="msg finalw"><?php echo strtoupper($nome) . ' WIN!' ?></div>
+        <?php endif ?>
+    <?php endif ?>
+<?php else: ?>
+    <div class="waiting">waiting for a second player</div>
+<?php endif ?>
+<div class="content rkg">
+    <h2>Ranking</h2>
+    <ul class="ranking">
+        <?php foreach ($this->players->getRanking() as $item): ?>
+            <li><?php echo $item->getNome() ?> <span class="pts"><?php echo $item->getPoints() ?></span></li>
+        <?php endforeach; ?>
+    </ul>
+</div>

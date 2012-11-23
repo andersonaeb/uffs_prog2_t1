@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <?php if ($this->getController() == 'game' && $this->getAction() == 'init'): ?>
+            <meta HTTP-EQUIV = "Refresh" CONTENT = "5; URL = <?php echo $this->baseUrl('game/init/t/' . $this->tokken . '?gname=' . $this->gname) ?>">
+        <?php endif ?>
+        <title><?php echo $this->getTitle() ?></title>
+        <link rel="shortcut icon" href="<?php echo $this->baseUrl('public/images/favicon.ico') ?>" />
+        <?php echo $this->css('fonts.css') ?>
+        <?php echo $this->css('main.css') ?>
+    </head>
+    <body>
+        <div id="content">
+            <h1>Tic Tac Toe</h1>
+            <?php echo $this->getContent() ?>
+        </div>
+        <div id="footer">
+            Programação II - Trabalho (T1)<br />
+            © 2012 - Anderson Eduardo Barberini / Artur Magalhães
+        </div>
+    </body>
+</html>

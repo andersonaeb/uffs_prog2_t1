@@ -1,0 +1,11 @@
+<form action="<?php echo $this->action ?>" method="POST">
+    <div class="row">
+        <label for="nickname">Nickname:</label>
+        <input type="text" name="nickname" value="<?php echo $this->nick?>" id="nickname" />
+    </div>
+    <div class="row">
+        <label for="email">Email:</label>
+        <input type="text" name="email" value="<?php echo $this->email?>" id="email" />
+    </div>
+    <input type="submit" class="submit" value="<?php echo $this->submitValue ?>" />
+</form>

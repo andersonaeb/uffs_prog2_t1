@@ -1,0 +1,28 @@
+<?php echo $this->header ?>
+<div class="content"> 
+    <div class="newg">
+        <p>Create a new empty game!</p>
+        <form action="<?php echo $this->baseUrl('game/init/t/' . $this->tokken . '&new=1') ?>" method="GET">
+            <input type="submit" class="submit subn" value="New Game" />
+        </form>
+    </div>
+    <div class="loadg">
+        <p>Load a game created, enter the game id!</p>
+        <form action="<?php echo $this->baseUrl('game/load/t/' . $this->tokken) ?>" method="GET">
+            <input type="text" name="gname" />            
+            <input type="submit" class="submit subl" value="Load Game" />
+        </form>
+        <?php if ($this->errol == 1): ?>
+            <div class="error">Game not exists.</div>
+        <?php endif ?>
+    </div>
+</div>
+<div class="content rkg">
+    <h2>Ranking</h2>
+    <ul class="ranking">
+        <?php foreach ($this->players->getRanking() as $item): ?>
+            <li><?php echo $item->getNome() ?> <span class="pts"><?php echo $item->getPoints() ?></span></li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+<a target="_blank" href="?name=<?php echo $this->gname ?>&expector=1" class="new">Link to viewers</a>

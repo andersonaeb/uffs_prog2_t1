@@ -1,0 +1,19 @@
+<div class="index">
+    <h2>Sign Up</h2>
+    <div class="form">    
+        <?php echo $this->form ?>
+        <?php if (!is_null($this->error)): ?>
+            <div class="error">
+                <?php
+                if ($this->error == 1) {
+                    echo 'Complete the fields correctly.';
+                }
+                if ($this->error == 2) {
+                    echo 'This email is already registered.';
+                }
+                ?>
+            </div>
+        <?php endif; ?>
+    </div>
+    <a href="<?php echo $this->baseUrl('login') ?>" title="Sign up">Already registered? Log In.</a>
+</div>
