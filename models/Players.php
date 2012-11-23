@@ -58,16 +58,15 @@ class Players extends Table {
             $points[] = $item->getPoints();
         }
         
-        rsort($points);
-        
+        arsort($points);
         
         $ordened = array();
         
         foreach($points as $key=>$value) {
             $ordened[] = $order[$key];
         }
-        
-        return $ordened;        
+
+        return $ordened;
     }
 
 }
